@@ -1,0 +1,185 @@
+:root {
+  --background-dark: #121212;
+  --text-dark: #ffffff;
+  --primary-color: #00bcd4;
+  --secondary-color: #00bcd4;
+  --navbar-color: #1c1c1c;
+}
+
+.experience-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #212121;
+  border-radius: 5px;
+}
+
+.experience-item h3 {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.experience-item h3:before {
+  content: '\25B6'; /* Triangle icon */
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.experience-item h3.expanded:before {
+  transform: rotate(90deg); /* Rotate the triangle icon */
+}
+
+.experience-details {
+  display: none;
+  margin-top: 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--background-dark);
+}
+
+#typing-text {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  display: inline-block;
+}
+
+.typing-animation {
+  animation: typing 4s steps(20, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--primary-color); }
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: var(--primary-color);
+}
+
+nav {
+  background-color: var(--navbar-color);
+  padding: 1rem 0;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: var(--primary-color);
+  color: var(--background-dark);
+  border-radius: 5px;
+}
+
+section {
+  padding: 2rem 1rem;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.experience-item, .project-item {
+  margin-bottom: 1.5rem;
+}
+
+.date {
+  color: #adadad;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 20px 0;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
+
+#tech-stack {
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+#tech-stack h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+#tech-stack ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#tech-stack ul li {
+  margin: 10px 0;
+}
+
+#tech-stack ul li strong {
+  color: #333;
+}
