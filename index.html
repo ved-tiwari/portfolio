@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ved Tiwari</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="dark-theme">
     <header>
@@ -12,8 +14,9 @@
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -21,7 +24,7 @@
 
     <script src="script.js"></script>
 
-    <section id="about">
+    <section id="about" class="fade-in">
         <h2>About</h2>
         <div class="about-content">
             <img src="profile.png" alt="Profile Picture" class="profile-picture">
@@ -30,10 +33,30 @@
                 <p>I've had the privilege of undertaking several internships in the past, and I'm always on the lookout for new opportunities to expand my knowledge in computer science and software development. These experiences have further fueled my curiosity and drive to excel in this field.</p>
             </div>
         </div>
+    </section>    
+
+    <section id="projects" class="fade-in">
+        <h2>Projects</h2>
+        <div class="project-item" class="fade-in">
+            <h3>LaneSync Vision</h3>
+            <p>Jul. 2024 - Present | PyTorch, Python, ESP32 Microcontroller, Arduino</p>
+            <ul>
+                <li>Developing a HUD to integrate computer vision and lane assistance technologies into 2016 legacy automotive vehicles</li>
+                <li>Packaging software on ESP32 hardware, utilizing Arduino for heads-up display projection</li>
+            </ul>
+        </div>
+        <div class="project-item" class="fade-in">
+            <h3>Thrive AI (Mobile App)</h3>
+            <p>Jun. 2022 - Sep. 2022 | Python, Flask, JavaScript, Bootstrap, Chart.JS</p>
+            <ul>
+                <li>Designed to deliver the most relevant poverty-related info to help aid the global poverty crisis</li>
+                <li>Used data from the US Census bureau to map past and future poverty predictions</li>
+                <li>Employed SciKitLearn framework to make AI-driven predictions of poverty rates around the world</li>
+            </ul>
+        </div>
     </section>
 
-
-    <section id="experience">
+    <section id="experience" class="fade-in">
         <h2>Experience</h2>
         <div class="experience-item">
             <h3 onclick="toggleDetails('experience1', this)">Fullstack Software Engineering Intern - JPMorgan Chase & Co.</h3>
@@ -74,33 +97,27 @@
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-item">
-            <h3>LaneSync Vision</h3>
-            <p>Jul. 2024 - Present | PyTorch, Python, ESP32 Microcontroller, Arduino</p>
-            <ul>
-                <li>Developing a HUD to integrate computer vision and lane assistance technologies into 2016 legacy automotive vehicles</li>
-                <li>Packaging software on ESP32 hardware, utilizing Arduino for heads-up display projection</li>
-            </ul>
+    <section id="resume" class="fade-in">
+        <h2>Resume</h2>
+        <button class="show-resume-button" onclick="toggleResume()">Show Resume</button>
+        <a href="ved_tiwari_resume.pdf" class="download-button" target="_blank">
+            <i class="fas fa-file-pdf"></i> Download Resume
+        </a>
+        
+        <div class="pdf-viewer" id="pdfViewer" style="display: none;">
+            <embed src="ved_tiwari_resume.pdf" type="application/pdf" width="100%" height="600px" />
         </div>
-        <div class="project-item">
-            <h3>Thrive AI (Mobile App)</h3>
-            <p>Jun. 2022 - Sep. 2022 | Python, Flask, JavaScript, Bootstrap, Chart.JS</p>
-            <ul>
-                <li>Designed to deliver the most relevant poverty-related info to help aid the global poverty crisis</li>
-                <li>Used data from the US Census bureau to map past and future poverty predictions</li>
-                <li>Employed SciKitLearn framework to make AI-driven predictions of poverty rates around the world</li>
-            </ul>
-        </div>
-    </section>
+    </section>    
+    
 
-    <section id="contact">
+    <section id="contact" class="fade-in">
         <h2>Contact Me</h2>
         <p>Phone number: (302) 563-1770</p>
         <p>Email: vedt2@illinois.edu</p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/ved-tiwari-2b1241215/" target="_blank">linkedin.com/in/ved-tiwari</a></p>
         <p>GitHub: <a href="https://github.com/ved-tiwari" target="_blank">github.com/ved-tiwari</a></p>
     </section>
+
+    
 </body>
 </html>
