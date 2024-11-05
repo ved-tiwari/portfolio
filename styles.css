@@ -1,9 +1,25 @@
 :root {
+  /* Dark Theme */
   --background-dark: #121212;
   --text-dark: #ffffff;
   --primary-color: #29abcb;
   --secondary-color: #313131;
   --navbar-color: #1c1c1c;
+
+  /* Light Theme Complements */
+  --background-light: #f5f5f5;
+  --text-light: #121212;
+  --primary-color-light: #20a3bd;
+  --secondary-color-light: #efefef;
+  --navbar-light: #e0e0e0;
+}
+
+.light-theme {
+  --background-dark: var(--background-light);
+  --text-dark: var(--text-light);
+  --primary-color: var(--primary-color-light);
+  --secondary-color: var(--secondary-color-light);
+  --navbar-color: var(--navbar-light);
 }
 
 html {
@@ -54,23 +70,27 @@ header:hover {
   color: var(--primary-color);
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid;
+  border-right: 3px solid var(--primary-color);
   display: inline-block;
-}
-
-.typing-animation {
-  animation: typing 4s steps(20, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  animation: blink-caret 0.75s step-end infinite;
 }
 
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: var(--primary-color); }
 }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 nav {
   background-color: var(--navbar-color);
@@ -143,6 +163,7 @@ h2 {
 }
 
 .profile-picture {
+  box-shadow: 0 0 10px var(--primary-color);
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -157,9 +178,9 @@ h2 {
 .experience-item, .project-item {
   margin-bottom: 1.5rem;
   padding: 10px;
-  border: 1px solid #212121;
+  border: 1px solid var(--secondary-color);
   border-radius: 5px;
-  background-color: #1a1a1a;
+  background-color: var(--navbar-color);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.5s, box-shadow 0.5s;
   text-align: left;
@@ -203,7 +224,7 @@ h2 {
   margin: 20px 0;
   font-size: 16px;
   color: #fff;
-  background-color: #616161;
+  background-color: var(--secondary-color);
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -213,7 +234,7 @@ h2 {
 }
 
 .download-button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
@@ -225,7 +246,7 @@ h2 {
 }
 
 #tech-stack h2 {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid var(--secondary-color);
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -240,7 +261,7 @@ h2 {
 }
 
 #tech-stack ul li strong {
-  color: #333;
+  color: var(--text-dark);
 }
 
 /* Responsive design */
@@ -279,7 +300,7 @@ h2 {
 
 .pdf-viewer {
   margin-top: 1rem;
-  border: 1px solid #212121;
+  border: 1px solid var(--secondary-color);
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -288,9 +309,9 @@ h2 {
 .show-resume-button {
   display: block;
   width: auto;
-  margin: 10px auto; /* Adjusted margin for better spacing */
-  padding: 8px 16px; /* Smaller padding */
-  font-size: 14px; /* Smaller font size */
+  margin: 10px auto;
+  padding: 8px 16px;
+  font-size: 14px;
   color: #fff;
   background-color: var(--primary-color);
   border: none;
@@ -309,5 +330,86 @@ h2 {
 }
 
 .download-button i {
-  margin-right: 8px; /* Space between the icon and the text */
+  margin-right: 8px;
+}
+
+#theme-toggle {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#theme-toggle:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Sticky Toggle Switch */
+.theme-toggle-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#theme-toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+
+/* Hide the checkbox */
+.theme-switch input {
+    display: none;
+}
+
+/* Toggle switch styling */
+.theme-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon styling */
+.theme-icon {
+    position: absolute;
+    font-size: 1.5rem;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.theme-sun {
+    left: 15px;
+    color: #ffdf00; /* Sun icon color */
+}
+
+.theme-moon {
+    right: 15px;
+    color: #f1c40f; /* Moon icon color */
+    opacity: 0; /* Initially hidden in light mode */
+}
+
+/* Toggle the icons on checkbox change */
+input:checked + .theme-switch .theme-sun {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+input:checked + .theme-switch .theme-moon {
+    opacity: 1;
+    transform: translateX(0);
 }
