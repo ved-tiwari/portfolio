@@ -1,74 +1,93 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Typing effect for the header text
-    const textElement = document.getElementById('typing-text');
-    if (textElement) {
-        const text = textElement.textContent;
-        textElement.textContent = ''; // Clear the original text
+const canvas = document.createElement('canvas');
+canvas.id = 'interactive-bg';
+document.body.appendChild(canvas);
 
-        let index = 0;
-        function type() {
-            if (index < text.length) {
-                textElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(type, 150); // Typing speed (adjust as desired)
-            }
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  initParticles();
+});
+
+const particles = [];
+const particleCount = 100;
+
+function createParticle(x, y) {
+  return {
+    x: x || Math.random() * canvas.width,
+    y: y || Math.random() * canvas.height,
+    radius: Math.random() * 2 + 0.5, // Smaller size
+    color: `rgba(200, 200, 200, ${Math.random() * 0.3 + 0.1})`, // Softer color and lower opacity
+    velocityX: (Math.random() - 0.5) * 0.5, // Slower movement
+    velocityY: (Math.random() - 0.5) * 0.5, // Slower movement
+  };
+}
+
+function initParticles() {
+  particles.length = 0;
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(createParticle());
+  }
+}
+
+function updateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach((particle) => {
+    particle.x += particle.velocityX;
+    particle.y += particle.velocityY;
+
+    if (particle.x < 0 || particle.x > canvas.width) {
+      particle.x = Math.random() * canvas.width;
+    }
+    if (particle.y < 0 || particle.y > canvas.height) {
+      particle.y = Math.random() * canvas.height;
+    }
+
+    ctx.beginPath();
+    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+    ctx.fillStyle = particle.color;
+    ctx.fill();
+  });
+
+  requestAnimationFrame(updateParticles);
+}
+
+initParticles();
+updateParticles();
+
+const faces = [
+    "Software Development",
+    "Machine Learning",
+    "Problem Solving",
+    "Cloud Engineering",
+    "Team Collaboration",
+    "Research"
+];
+
+document.querySelectorAll(".face").forEach((face, index) => {
+    face.textContent = faces[index];
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeIns = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in-visible");
+          observer.unobserve(entry.target); // Stop observing once it becomes visible
         }
+      });
+    },
+    { threshold: 0.1 } // Trigger when 10% of the element is visible
+  );
 
-        type(); // Start the typing effect
-    }
-
-    // Theme toggle code
-    const themeToggleCheckbox = document.getElementById("theme-toggle");
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const currentTheme = localStorage.getItem("theme");
-
-    if (currentTheme === "dark" || (prefersDarkScheme && !currentTheme)) {
-        document.body.classList.remove("light-theme");
-        themeToggleCheckbox.checked = true;
-        localStorage.setItem("theme", "dark");
-    } else {
-        document.body.classList.add("light-theme");
-        themeToggleCheckbox.checked = false;
-        localStorage.setItem("theme", "light");
-    }
-
-    // Toggle theme on switch
-    themeToggleCheckbox.addEventListener("change", () => {
-        document.body.classList.toggle("light-theme");
-        const theme = document.body.classList.contains("light-theme") ? "light" : "dark";
-        localStorage.setItem("theme", theme);
-    });
-
-    // Fade-in animation logic
-    const fadeInElements = document.querySelectorAll('.fade-in');
-
-    function handleFadeIn() {
-        fadeInElements.forEach(element => {
-            element.classList.add('visible');
-        });
-    }
-
-    // Immediately trigger fade-in after loading
-    handleFadeIn();
-
-    // Toggle experience details logic
-    function toggleDetails(id, element) {
-        const details = document.getElementById(id);
-        if (details.style.display === "none" || details.style.display === "") {
-            details.style.display = "block";
-            element.classList.add("expanded");
-        } else {
-            details.style.display = "none";
-            element.classList.remove("expanded");
-        }
-    }
-
-    // Add event listeners for each experience item
-    const experienceHeaders = document.querySelectorAll('.experience-item h3');
-    experienceHeaders.forEach(header => {
-        header.addEventListener('click', function () {
-            const detailsId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
-            toggleDetails(detailsId, this);
-        });
-    });
+  fadeIns.forEach(element => {
+    observer.observe(element);
+  });
 });

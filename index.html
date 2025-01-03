@@ -1,134 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-theme">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ved Tiwari</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ved Tiwari - Portfolio</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Calibre:wght@400;700&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  
 </head>
-<body class="dark-theme">
-    
-    <header>
-        <h1 id="typing-text" class="typing-animation">Hi! I'm Ved</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="theme-toggle-container">
-        <input type="checkbox" id="theme-toggle" />
-        <label for="theme-toggle" class="theme-switch">
-            <span class="theme-icon theme-sun"><i class="fas fa-sun"></i></span>
-            <span class="theme-icon theme-moon"><i class="fas fa-moon"></i></span>
-        </label>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      {<span class="v-letter">V</span><span class="t-letter">T</span>}
     </div>
-    
-    
-    
+    <nav class="site-nav">
+      <ul class="nav-list">
+        <li><a href="#about"><span>01.</span> About</a></li>
+        <li><a href="#experience"><span>02.</span> Experience</a></li>
+        <li><a href="#projects"><span>03.</span> Projects</a></li>
+        <li><a href="#contact"><span>04.</span> Resume</a></li>
+        <li><a href="#contact"><span>05.</span> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+
+  <section class="hero fade-in">
+    <div class="animated-bg"></div>
+    <div class="intro-container">
+      <div class="intro-text">
+        <h1 class="intro-heading">Hi, I'm</h1>
+        <h2 class="big-heading">Ved Tiwari.</h2>
+      </div>
+      <a href="https://www.linkedin.com/in/ved-tiwari-2b1241215/" target="_blank" class="linkedin-button">
+        <span>Visit My LinkedIn</span>
+        <i class="fas fa-external-link-alt"></i>
+      </a>
+    </div>
+  </section>
+
+  <main>
+    <!-- About Section -->
+    <section id="about" class="section about-section fade-in">
+      <h2 class="numbered-heading"><span>01.</span> About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I'm a driven computer engineering student with a deep passion for technology and innovation. My journey has
+            been marked by exploring diverse fields in computer science, from software engineering to machine learning,
+            fueled by a strong foundation in mathematics and problem-solving.
+          </p>
+          <p>
+            Through internships and research opportunities, I've honed my technical skills and developed a proactive
+            approach to learning and collaboration. Whether tackling real-world challenges or pushing the boundaries of
+            technology, I aim to make a meaningful impact.
+          </p>
+        </div>
+        <div class="profile-container">
+          <div class="glowing-ring"></div>
+          <img
+            src="profile.jpeg"
+            alt="LinkedIn Profile Picture" class="profile-pic" />
+        </div>
+    </section>
+
+    <section id="experience" class="section experience-section fade-in">
+      <h2 class="numbered-heading" style="color: #ccd6f6;"><span>02.</span> Experience</h2>
+      <div class="experience-content">
+        <!-- Job 1 -->
+        <div class="experience-item">
+          <h3>
+            Illinois Electric Motorsports
+            <span class="experience-role">Embedded Software Engineer</span>
+          </h3>
+          <span class="experience-duration">Jun 2024 – Present</span>
+          <p>Optimized BMS firmware, reducing system latency and enhancing reliability using Embedded C and CAN
+            protocols. Improved data throughput with rigorous unit tests and Git version control.</p>
+        </div>
+        <!-- Job 2 -->
+        <div class="experience-item">
+          <h3>
+            JPMorgan Chase & Co.
+            <span class="experience-role">Software Engineering Intern</span>
+          </h3>
+          <span class="experience-duration">Jun 2024 – Aug 2024</span>
+          <p>Designed and developed a full-stack tool for application migration using Java SpringBoot and React,
+            reducing migration time by 73% and optimizing developer workflows.</p>
+        </div>
+        <!-- Job 3 -->
+        <div class="experience-item">
+          <h3>
+            National Center for Supercomputing Applications
+            <span class="experience-role">Undergraduate Researcher</span>
+          </h3>
+          <span class="experience-duration">Jan 2024 – May 2024</span>
+          <p>Conducted research on generative AI impacts on social media user behavior. Presented findings at Illinois
+            Research Symposium to over 100 attendees.</p>
+        </div>
+        <!-- Job 4 -->
+        <div class="experience-item">
+          <h3>
+            JPMorgan Chase & Co.
+            <span class="experience-role">Backend Software Engineering Intern</span>
+          </h3>
+          <span class="experience-duration">Jun 2023 – Aug 2023</span>
+          <p>Developed AWS-based cloud solutions for data synchronization between S3 and DynamoDB, leveraging NoSQL
+            strategies to optimize latency and resource use.</p>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="section projects-section fade-in">
+      <h2 class="numbered-heading"><span>03.</span> Projects</h2>
+      <div class="projects-content">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="presentation.jpg" alt="Generative Twitter" class="project-image" />
+          <div class="project-details">
+            <h3>Generative Twitter</h3>
+            <span class="project-duration">Jan 2024 – Jul 2024</span>
+            <p>
+              Investigated the impact of generative large language models (LLMs) on user-generated content in the social media space. Conducted qualitative and quantitative research, presenting findings to over 100 attendees at the Illinois research symposium.
+            </p>
+            <ul class="tech-list">
+              <li>LLMs</li>
+              <li>Python</li>
+              <li>Data Visualization</li>
+              <li>Matplotlib</li>
+              <li>Research Analysis</li>
+            </ul>
+            <a href="https://media.licdn.com/dms/document/media/v2/D4D2DAQG1--fH3r3Kjg/profile-treasury-document-pdf-analyzed/profile-treasury-document-pdf-analyzed/0/1716391173764?e=1736985600&v=beta&t=4WSBc5qe4R6anS_ro_1JC2R3s_MVjfQQe8Ih6cNkzps" target="_blank" class="project-link">
+              <i class="fas fa-file-alt"></i> View Symposium Poster
+            </a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="thrive.png" alt="Thrive AI" class="project-image fade-in" />
+          <div class="project-details">
+            <h3>Thrive AI</h3>
+            <span class="project-duration">Jun 2022 – Sep 2022</span>
+            <p>
+              Thrive AI is an application designed to address global poverty by providing accurate poverty rate projections
+              and offering actionable resources. It uses advanced machine learning models for linear regression and
+              integrates real-time data from various APIs to deliver insights effectively.
+            </p>
+            <ul class="tech-list">
+              <li>Python</li>
+              <li>Scikit-Learn</li>
+              <li>NumPy</li>
+              <li>Chart.js</li>
+              <li>NewsData.io API</li>
+              <li>AJAX</li>
+            </ul>
+            <a href="https://github.com/ved-tiwari/thrive-ai" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+            <a href="http://thriveai.pythonanywhere.com/" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card">
+          <img
+            src="https://user-images.githubusercontent.com/79772110/112737254-696e4000-8f2f-11eb-916f-4d9bbe2e3928.png"
+            alt="AQI Meter" class="project-image" />
+          <div class="project-details">
+            <h3>AQI Meter</h3>
+            <span class="project-duration">Mar 2023 – Jun 2023</span>
+            <p>
+              AQI Meter is an innovative application designed to provide real-time air quality, pollen, and weather
+              statistics for over 190 countries. Leveraging machine learning and linear regression, the app predicts air
+              quality values and offers health recommendations based on AQI levels.
+            </p>
+            <ul class="tech-list">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>JavaScript</li>
+              <li>AJAX</li>
+              <li>Chart.js</li>
+              <li>Machine Learning</li>
+            </ul>
+            <a href="https://github.com/ved-tiwari/AQI-Meter" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+            <a href="http://aqimeter.pythonanywhere.com/" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="section resume-section fade-in">
+      <h2 class="numbered-heading" style="color: #ccd6f6;"><span>04.</span> Resume</h2>
+      <div class="resume-content">
+        <p>Explore my professional journey and accomplishments.</p>
+        <div class="resume-buttons">
+          <a href="ved_tiwari_resume.pdf" target="_blank" class="button view-resume">
+            <i class="fas fa-eye"></i> View Resume
+          </a>
+          <a href="ved_tiwari_resume.pdf" download class="button download-resume">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section fade-in">
+      <h2 class="numbered-heading"><span>05.</span> Contact</h2>
+      <div class="contact-content">
+        <p>I am reachable via the following routes</p>
+        <div class="contact-details">
+          <p>
+            <i class="fas fa-envelope"></i>
+            Email: <a href="mailto:vedt2@illinois.edu">vedt2@illinois.edu</a>
+          </p>
+          <p>
+            <i class="fab fa-linkedin"></i>
+            LinkedIn: <a href="https://linkedin.com/in/ved-tiwari" target="_blank">linkedin.com/in/ved-tiwari</a>
+          </p>
+          <p>
+            <i class="fab fa-github"></i>
+            GitHub: <a href="https://github.com/ved-tiwari" target="_blank">github.com/ved-tiwari</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+
     <script src="script.js"></script>
-
-    <section id="about" class="fade-in">
-        <h2>About</h2>
-        <div class="about-content">
-            <img src="profile.png" alt="Profile Picture" class="profile-picture">
-            <div class="about-text">
-                <p>I am pursuing a degree in computer engineering. With my passion for technology and a strong foundation in mathematics, I am eager to explore the diverse fields of computer science and software engineering to contribute to its continuous evolution.</p>
-                <p>I've had the privilege of undertaking several internships in the past, and I'm always on the lookout for new opportunities to expand my knowledge in computer science and software development. These experiences have further fueled my curiosity and drive to excel in this field.</p>
-            </div>
-        </div>
-    </section>    
-
-    <section id="projects" class="fade-in">
-        <h2>Projects</h2>
-        <div class="project-item" class="fade-in">
-            <h3>LaneSync Vision</h3>
-            <p>Jul. 2024 - Present | PyTorch, Python, ESP32 Microcontroller, Arduino</p>
-            <ul>
-                <li>Developing a HUD to integrate computer vision and lane assistance technologies into 2016 legacy automotive vehicles</li>
-                <li>Packaging software on ESP32 hardware, utilizing Arduino for heads-up display projection</li>
-            </ul>
-        </div>
-        <div class="project-item" class="fade-in">
-            <h3>Thrive AI (Mobile App)</h3>
-            <p>Jun. 2022 - Sep. 2022 | Python, Flask, JavaScript, Bootstrap, Chart.JS</p>
-            <ul>
-                <li>Designed to deliver the most relevant poverty-related info to help aid the global poverty crisis</li>
-                <li>Used data from the US Census bureau to map past and future poverty predictions</li>
-                <li>Employed SciKitLearn framework to make AI-driven predictions of poverty rates around the world</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="experience" class="fade-in">
-        <h2>Experience</h2>
-        <div class="experience-item">
-            <h3 onclick="toggleDetails('experience1', this)">Fullstack Software Engineering Intern - JPMorgan Chase & Co.</h3>
-            <p class="date">Jun. 2024 - Present | Wilmington, DE</p>
-            <div class="experience-details" id="experience1">
-                <ul>
-                    <li>Engineered a full-stack developer tool to optimize the migration of application instances across cloud pools within the Cloud Foundry environment</li>
-                    <li>Reduced developer overhead and achieved a 73% reduction in migration time by developing a Java SpringBoot API to automate the migration process</li>
-                    <li>Designed and implemented a comprehensive UI using TypeScript, CSS, and React to interface with our backend API endpoints</li>
-                    <li>Integrated Single Sign-On (SSO) to automate authentication for internal developers and app managers, eliminating manual login processes</li>
-                    <li>Utilized Jenkins CI/CD to deploy frontend and backend application to the cloud</li>
-                    <li>Successfully migrated 22% of organizational applications, significantly enhancing operational efficiency for Cloud Foundry developers and app managers</li>
-                </ul>
-            </div>
-        </div>
-        <div class="experience-item">
-            <h3 onclick="toggleDetails('experience2', this)">Machine Learning Undergraduate Researcher - University of Illinois (Department of Computer Science) PURE Program</h3>
-            <p class="date">Jan. 2024 - Present | Champaign, IL</p>
-            <div class="experience-details" id="experience2">
-                <ul>
-                    <li>Investigated the impact of generative large language models (LLMs) such as LLama, GPT-4, and Bard on user-generated content in the social media space, focusing on user interactions, and misinformation</li>
-                    <li>Assisted mentor to conduct qualitative and quantitative research, surveying 50+ users to understand behavior patterns when exposed to AI-generated false information</li>
-                    <li>Presented findings to an audience of 100+ attendees at the Illinois research symposium</li>
-                </ul>
-            </div>
-        </div>
-        <div class="experience-item">
-            <h3 onclick="toggleDetails('experience3', this)">Backend Software Engineering Intern - JPMorgan Chase & Co.</h3>
-            <p class="date">Jun. 2023 - Aug. 2023 | Wilmington, DE</p>
-            <div class="experience-details" id="experience3">
-                <ul>
-                    <li>Developed a batch cloud application using AWS to establish seamless connectivity between Amazon S3 and DynamoDB services</li>
-                    <li>Facilitated highly efficient data transfer and synchronization within the cloud environment, while minimizing time and resource usage in our cluster</li>
-                    <li>Utilized relational NoSQL strategies for mapping S3 JSON file data onto DynamoDB’s metadata structure</li>
-                    <li>Orchestrated Terraform ArtifactID creation and validated application functionality through Jenkins CI/CD</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="resume" class="fade-in">
-        <h2>Resume</h2>
-        <button class="show-resume-button" onclick="toggleResume()">Show Resume</button>
-        <a href="ved_tiwari_resume.pdf" class="download-button" target="_blank">
-            <i class="fas fa-file-pdf"></i> Download Resume
-        </a>
-        
-        <div class="pdf-viewer" id="pdfViewer" style="display: none;">
-            <embed src="ved_tiwari_resume.pdf" type="application/pdf" width="100%" height="600px" />
-        </div>
-    </section>    
-    
-
-    <section id="contact" class="fade-in">
-        <h2>Contact Me</h2>
-        <p><i class="fas fa-phone"></i> Phone: (302) 563-1770</p>
-        <p> <i class="fas fa-envelope"></i> Email: vedt2@illinois.edu</p>
-        <p> <i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/ved-tiwari-2b1241215/" target="_blank">linkedin.com/in/ved-tiwari</a></p>
-        <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/ved-tiwari" target="_blank">github.com/ved-tiwari</a></p>
-    </section>
-
-    
 </body>
+
 </html>

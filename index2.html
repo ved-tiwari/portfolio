@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Skill Cube</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg-color: #181818;
+      --face-bg: rgba(0, 0, 0, 0.6); /* Darker transparency */
+      --face-border: rgba(255, 255, 255, 0.2);
+      --face-glow: rgba(255, 255, 255, 0.3);
+      --cube-size: 360px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: radial-gradient(circle at center, var(--bg-color), #0f0f0f);
+      font-family: "Inter", sans-serif;
+      color: #fff;
+    }
+
+    .scene {
+      width: var(--cube-size);
+      height: var(--cube-size);
+      perspective: 1200px;
+    }
+
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotateCube 40s infinite cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: var(--face-bg);
+      border: 1px solid var(--face-border);
+      box-shadow: 0 8px 20px var(--face-glow);
+      backdrop-filter: blur(6px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .face img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 8px;
+    }
+
+    /* Face Positions */
+    .front { transform: translateZ(calc(var(--cube-size) / 2)); }
+    .back { transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2)); }
+    .right { transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2)); }
+    .left { transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2)); }
+    .top { transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2)); }
+    .bottom { transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2)); }
+
+    @keyframes rotateCube {
+      0% { transform: rotateX(0deg) rotateY(0deg); } /* Start at Python */
+      20% { transform: rotateX(0deg) rotateY(-90deg); } /* Show AWS */
+      40% { transform: rotateX(0deg) rotateY(-180deg); } /* Show Docker */
+      60% { transform: rotateX(0deg) rotateY(90deg); } /* Show React */
+      80% { transform: rotateX(-90deg) rotateY(0deg); } /* Show Git */
+      100% { transform: rotateX(0deg) rotateY(0deg); } /* Back to Python */
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="cube">
+      <div class="face front">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+          alt="Python Logo"
+        />
+        Python
+      </div>
+      <div class="face back">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+          alt="Amazon Smile Logo"
+        />
+        AWS
+      </div>
+      <div class="face right">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+          alt="Docker Logo"
+        />
+        Docker
+      </div>
+      <div class="face left">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+          alt="React Logo"
+        />
+        React
+      </div>
+      <div class="face top">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+          alt="Git Logo"
+        />
+        Git
+      </div>
+      <div class="face bottom">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          alt="Java Logo"
+        />
+        Java
+      </div>
+    </div>
+  </div>
+</body>
+</html>
