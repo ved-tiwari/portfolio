@@ -11,6 +11,8 @@
     rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
+  <style>
+  </style>
   
 </head>
 
@@ -24,7 +26,7 @@
         <li><a href="#about"><span>01.</span> About</a></li>
         <li><a href="#experience"><span>02.</span> Experience</a></li>
         <li><a href="#projects"><span>03.</span> Projects</a></li>
-        <li><a href="#contact"><span>04.</span> Resume</a></li>
+        <li><a href="#resume"><span>04.</span> Resume</a></li>
         <li><a href="#contact"><span>05.</span> Contact</a></li>
       </ul>
     </nav>
@@ -74,51 +76,75 @@
     <section id="experience" class="section experience-section fade-in">
       <h2 class="numbered-heading" style="color: #ccd6f6;"><span>02.</span> Experience</h2>
       <div class="experience-content">
-        <!-- Job 1 -->
+
         <div class="experience-item">
           <h3>
-            Illinois Electric Motorsports
-            <span class="experience-role">Embedded Software Engineer</span>
+            Amazon
+            <span class="experience-role">Software Development Engineering Intern — Search Engine Optimization</span>
           </h3>
-          <span class="experience-duration">Jun 2024 – Present</span>
-          <p>Optimized BMS firmware, reducing system latency and enhancing reliability using Embedded C and CAN
-            protocols. Improved data throughput with rigorous unit tests and Git version control.</p>
+          <span class="experience-duration">May. 2025 – Present</span>
+          <span class="experience-location">Seattle, WA</span>
+          <p>
+            Summer 2025
+          </p>
         </div>
-        <!-- Job 2 -->
+
         <div class="experience-item">
           <h3>
-            JPMorgan Chase & Co.
-            <span class="experience-role">Software Engineering Intern</span>
+            Siebel School for Computing and Data Science, UIUC
+            <span class="experience-role">Course Assistant & Staff Lead — CS225 (Data Structures and Algorithms in C++)</span>
           </h3>
-          <span class="experience-duration">Jun 2024 – Aug 2024</span>
-          <p>Designed and developed a full-stack tool for application migration using Java SpringBoot and React,
-            reducing migration time by 73% and optimizing developer workflows.</p>
+          <span class="experience-duration">Jan. 2025 – Present</span>
+          <span class="experience-location">Urbana-Champaign, IL</span>
+          <p>
+            Assisted students with core C++ concepts and projects during office hours. Led efforts to scale and improve course infrastructure, positively impacting over 1,400 students.
+          </p>
         </div>
-        <!-- Job 3 -->
-        <div class="experience-item">
-          <h3>
-            National Center for Supercomputing Applications
-            <span class="experience-role">Undergraduate Researcher</span>
-          </h3>
-          <span class="experience-duration">Jan 2024 – May 2024</span>
-          <p>Conducted research on generative AI impacts on social media user behavior. Presented findings at Illinois
-            Research Symposium to over 100 attendees.</p>
-        </div>
-        <!-- Job 4 -->
+
         <div class="experience-item">
           <h3>
             JPMorgan Chase & Co.
-            <span class="experience-role">Backend Software Engineering Intern</span>
+            <span class="experience-role">Software Engineering Intern — Cloud and Infra</span>
           </h3>
-          <span class="experience-duration">Jun 2023 – Aug 2023</span>
-          <p>Developed AWS-based cloud solutions for data synchronization between S3 and DynamoDB, leveraging NoSQL
-            strategies to optimize latency and resource use.</p>
+          <span class="experience-duration">Jun. 2024 – Aug. 2024</span>
+          <span class="experience-location">Wilmington, DE</span>
+          <p>
+            Developed a full-stack tool and SpringBoot API to automate cloud migration, reducing deployment times from several days to under 2 hours. Migrated 22% of all organization apps, streamlining infrastructure across CF cloud pools.
+          </p>
         </div>
+
+      </div>
+
+      <div class="resume-jump-button" style="margin-top: 30px;">
+        <a href="#resume" class="linkedin-button">
+          <i class="fas fa-file-alt"></i>&nbsp; View Full Resume
+        </a>
       </div>
     </section>
     <section id="projects" class="section projects-section fade-in">
       <h2 class="numbered-heading"><span>03.</span> Projects</h2>
       <div class="projects-content">
+        <!-- Project 3 (FPGA Digit Recognition) -->
+        <div class="project-card">
+          <img src="realDigital.png" alt="FPGA Digit Recognition" class="project-image" />
+          <div class="project-details">
+            <h3>FPGA Digit Recognition</h3>
+            <span class="project-duration">Feb 2024 – May 2024</span>
+            <p>
+              Implemented a neural network on an FPGA to classify handwritten digits in real-time. Utilized fixed-point arithmetic,
+              BRAM-based weight storage, and a camera interface to perform live inference on digit inputs with sub-20ms latency.
+            </p>
+            <ul class="tech-list">
+              <li>Neural Networks</li>
+              <li>Digit Recognition</li>
+              <li>Model Quantization</li>
+              <li>FPGA Acceleration</li>
+            </ul>
+            <a href="https://github.com/ved-tiwari/fpga_digit_recognition" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+        </div>
         <!-- Project 1 -->
         <div class="project-card">
           <img src="presentation.jpg" alt="Generative Twitter" class="project-image" />
@@ -167,35 +193,12 @@
             </a>
           </div>
         </div>
-        <!-- Project 3 -->
-        <div class="project-card">
-          <img
-            src="https://user-images.githubusercontent.com/79772110/112737254-696e4000-8f2f-11eb-916f-4d9bbe2e3928.png"
-            alt="AQI Meter" class="project-image" />
-          <div class="project-details">
-            <h3>AQI Meter</h3>
-            <span class="project-duration">Mar 2023 – Jun 2023</span>
-            <p>
-              AQI Meter is an innovative application designed to provide real-time air quality, pollen, and weather
-              statistics for over 190 countries. Leveraging machine learning and linear regression, the app predicts air
-              quality values and offers health recommendations based on AQI levels.
-            </p>
-            <ul class="tech-list">
-              <li>Python</li>
-              <li>Flask</li>
-              <li>JavaScript</li>
-              <li>AJAX</li>
-              <li>Chart.js</li>
-              <li>Machine Learning</li>
-            </ul>
-            <a href="https://github.com/ved-tiwari/AQI-Meter" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-            <a href="http://aqimeter.pythonanywhere.com/" target="_blank" class="project-link">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-          </div>
-        </div>
+      </div>
+      <div class="more-projects-button">
+        <a href="https://github.com/ved-tiwari" target="_blank" class="linkedin-button">
+          <span>More Projects on GitHub</span>
+          <i class="fab fa-github"></i>
+        </a>
       </div>
     </section>
 
@@ -237,6 +240,8 @@
 
 
     <script src="script.js"></script>
+    <script>
+    </script>
 </body>
 
 </html>
