@@ -12,8 +12,45 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
   <style>
+    .project-card {
+      position: relative;
+    }
+
+    .finalist-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(135deg, #ffd700, #ffa500);
+      color: #000;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 2;
+      animation: pulse 2s infinite;
+    }
+
+    .finalist-badge i {
+      color: #000;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
   </style>
-  
+
 </head>
 
 <body>
@@ -67,9 +104,7 @@
         </div>
         <div class="profile-container">
           <div class="glowing-ring"></div>
-          <img
-            src="profile.jpeg"
-            alt="LinkedIn Profile Picture" class="profile-pic" />
+          <img src="profile.jpeg" alt="LinkedIn Profile Picture" class="profile-pic" />
         </div>
     </section>
 
@@ -92,12 +127,14 @@
         <div class="experience-item">
           <h3>
             Siebel School for Computing and Data Science, UIUC
-            <span class="experience-role">Course Assistant & Staff Lead — CS225 (Data Structures and Algorithms in C++)</span>
+            <span class="experience-role">Course Assistant & Staff Lead — CS225 (Data Structures and Algorithms in
+              C++)</span>
           </h3>
           <span class="experience-duration">Jan. 2025 – Present</span>
           <span class="experience-location">Urbana-Champaign, IL</span>
           <p>
-            Assisted students with core C++ concepts and projects during office hours. Led efforts to scale and improve course infrastructure, positively impacting over 1,400 students.
+            Assisted students with core C++ concepts and projects during office hours. Led efforts to scale and improve
+            course infrastructure, positively impacting over 1,400 students.
           </p>
         </div>
 
@@ -109,7 +146,9 @@
           <span class="experience-duration">Jun. 2024 – Aug. 2024</span>
           <span class="experience-location">Wilmington, DE</span>
           <p>
-            Developed a full-stack tool and SpringBoot API to automate cloud migration, reducing deployment times from several days to under 2 hours. Migrated 22% of all organization apps, streamlining infrastructure across CF cloud pools.
+            Developed a full-stack tool and SpringBoot API to automate cloud migration, reducing deployment times from
+            several days to under 2 hours. Migrated 22% of all organization apps, streamlining infrastructure across CF
+            cloud pools.
           </p>
         </div>
 
@@ -126,13 +165,18 @@
       <div class="projects-content">
         <!-- Project 3 (FPGA Digit Recognition) -->
         <div class="project-card">
+          <div class="finalist-badge">
+            <i class="fas fa-award"></i>
+            <span>Exhibition Finalist!</span>
+          </div>
           <img src="realDigital.png" alt="FPGA Digit Recognition" class="project-image" />
           <div class="project-details">
-            <h3>FPGA Digit Recognition</h3>
+            <h3>FPGA-Driven Edge ML Inference Pipeline</h3>
             <span class="project-duration">Feb 2024 – May 2024</span>
             <p>
-              Implemented a neural network on an FPGA to classify handwritten digits in real-time. Utilized fixed-point arithmetic,
-              BRAM-based weight storage, and a camera interface to perform live inference on digit inputs with sub-20ms latency.
+              Implemented a neural network on an FPGA to classify handwritten digits in real-time. Developed an edge-AI
+              inference pipeline on a Spartan-7 FPGA that uses loop-unrolled matrix operations to deliver real-time
+              MNIST classification at 97% accuracy, 18 ms latency, and under 500 mW power.
             </p>
             <ul class="tech-list">
               <li>Neural Networks</li>
@@ -152,7 +196,9 @@
             <h3>Generative Twitter</h3>
             <span class="project-duration">Jan 2024 – Jul 2024</span>
             <p>
-              Investigated the impact of generative large language models (LLMs) on user-generated content in the social media space. Conducted qualitative and quantitative research, presenting findings to over 100 attendees at the Illinois research symposium.
+              Investigated the impact of generative large language models (LLMs) on user-generated content in the social
+              media space. Conducted qualitative and quantitative research, presenting findings to over 100 attendees at
+              the Illinois research symposium.
             </p>
             <ul class="tech-list">
               <li>LLMs</li>
@@ -161,7 +207,8 @@
               <li>Matplotlib</li>
               <li>Research Analysis</li>
             </ul>
-            <a href="https://media.licdn.com/dms/document/media/v2/D4D2DAQG1--fH3r3Kjg/profile-treasury-document-pdf-analyzed/profile-treasury-document-pdf-analyzed/0/1716391173764?e=1736985600&v=beta&t=4WSBc5qe4R6anS_ro_1JC2R3s_MVjfQQe8Ih6cNkzps" target="_blank" class="project-link">
+            <a href="https://media.licdn.com/dms/document/media/v2/D4D2DAQG1--fH3r3Kjg/profile-treasury-document-pdf-analyzed/profile-treasury-document-pdf-analyzed/0/1716391173764?e=1736985600&v=beta&t=4WSBc5qe4R6anS_ro_1JC2R3s_MVjfQQe8Ih6cNkzps"
+              target="_blank" class="project-link">
               <i class="fas fa-file-alt"></i> View Symposium Poster
             </a>
           </div>
@@ -173,7 +220,8 @@
             <h3>Thrive AI</h3>
             <span class="project-duration">Jun 2022 – Sep 2022</span>
             <p>
-              Thrive AI is an application designed to address global poverty by providing accurate poverty rate projections
+              Thrive AI is an application designed to address global poverty by providing accurate poverty rate
+              projections
               and offering actionable resources. It uses advanced machine learning models for linear regression and
               integrates real-time data from various APIs to deliver insights effectively.
             </p>
